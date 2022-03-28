@@ -19,7 +19,7 @@
             </a>
             <a class="nav-link collapsed pt-4 " href="Classes.php">
                 <div class="nav-link-icon"><i data-feather="book"></i></div>
-                 <?php echo ($lang == "fr" ?  "Classes" : "Classes"); ?>
+                <?php echo ($lang == "fr" ?  "Classes" : "Classes"); ?>
             </a>
             <a class="nav-link collapsed pt-4 " href="Club.php">
                 <div class="nav-link-icon"><i data-feather="book"></i></div>
@@ -44,7 +44,10 @@
             <a class="nav-link collapsed pt-4 " href="boisson.php">
                 <div class="nav-link-icon"><i data-feather="menu"></i></div>
                 <?php echo ($lang == "fr" ?  "boisson" : "boisson"); ?>
-            </a>
+                <a class="nav-link collapsed pt-4 " href="Team.php">
+                    <div class="nav-link-icon"><i data-feather="menu"></i></div>
+                    <?php echo ($lang == "fr" ?  "Team" : "team"); ?>
+                </a>
 
 
         </div>

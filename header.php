@@ -27,72 +27,74 @@
 <body>
 
 
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
-
-<!-- Offcanvas Menu Section Begin -->
-<div class="offcanvas-menu-overlay"></div>
-<div class="offcanvas-menu-wrapper">
-    <div class="canvas-close">
-        <i class="fa fa-close"></i>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
     </div>
-    <nav class="canvas-menu mobile-menu">
-        <ul>
-            <li><a href="./index.php">Home</a></li>
-            <li><a href="./about-us.php">About Us</a></li>
-            <li><a href="./class-details.php">Planing</a></li>
-            <li><a href="./services.php">Services</a></li>
-            <li><a href="./bar.php">bar</a></li>
-            <li><a href="./contact.php">Contact</a></li>
-        </ul>
-    </nav>
-    <div id="mobile-menu-wrap"></div>
-    <div class="canvas-social">
-        <a href="https://www.facebook.com/ClimbInTunisia"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.instagram.com/climb.in/"><i class="fa fa-instagram"></i></a>
-    </div>
-</div>
-<!-- Offcanvas Menu Section End -->
 
-<!-- Header Section Begin -->
-<header class="header-section">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="logo">
-                    <a href="./index.php">
-                        <img src="img/logo.png" alt="">
-                    </a>
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <i class="fa fa-close"></i>
+        </div>
+        <nav class="canvas-menu mobile-menu">
+            <ul>
+                <li><a href="./index.php">Home</a></li>
+                <li><a href="./class-details.php">Planing</a></li>
+                <li><a href="./services.php">Services</a></li>
+                <li><a href="./bar.php">bar</a></li>
+                <li><a href="./gallery.php">Gallery</a></li>
+                <li><a href="./about-us.php">About Us</a></li>
+                <li><a href="./contact.php">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="canvas-social">
+            <a href="https://www.facebook.com/ClimbInTunisia"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/climb.in/"><i class="fa fa-instagram"></i></a>
+        </div>
+    </div>
+    <!-- Offcanvas Menu Section End -->
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="logo">
+                        <a href="./index.php">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <nav class="nav-menu">
-                    <ul>
-                        <li><a href="./index.php">Home</a></li>
-                        <li><a href="./about-us.php">About Us</a></li>
-                        <li><a href="./class-details.php">Planing</a></li>
-                        <li><a href="./services.php">Services</a></li>
-                        <li><a href="./bar.php">Bar</a></li>
-                        <li><a href="./blog.php">Blog</a></li>
-                        <li><a href="./contact.php">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-lg-3">
-                <div class="top-option">
-                    <div class="to-social">
-                        <a href="https://www.facebook.com/ClimbInTunisia"><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/climb.in/"><i class="fa fa-instagram"></i></a>
+                <div class="col-lg-6">
+                    <nav class="nav-menu">
+                        <ul>
+                            <li><a href="./index.php">Home</a></li>
+                            <li><a href="./class-details.php">Planing</a></li>
+                            <li><a href="./services.php">Services</a></li>
+                            <li><a href="./bar.php">Bar</a></li>
+                            <li><a href="./blog.php">Blog</a></li>
+                            <li><a href="./gallery.php">Gallery</a></li>
+                            <li><a href="./about-us.php">About Us</a></li>
+                            <li><a href="./contact.php">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="top-option">
+                        <div class="to-social">
+                            <a href="https://www.facebook.com/ClimbInTunisia"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/climb.in/"><i class="fa fa-instagram"></i></a>
 
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="canvas-open">
+                <i class="fa fa-bars"></i>
+            </div>
         </div>
-        <div class="canvas-open">
-            <i class="fa fa-bars"></i>
-        </div>
-    </div>
-</header>
-<!-- Header End -->
+    </header>
+    <!-- Header End -->

@@ -1,11 +1,6 @@
 <?php session_start(); ?>
 <?php require_once('./includes/db.php'); ?>
 
-<?php
-if (isset($_SESSION['login']) || isset($_COOKIE['_uid_']) || isset($_COOKIE['_uiid_'])) {
-    header("Location: ../index.php");
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +67,7 @@ if (isset($_SESSION['login']) || isset($_COOKIE['_uid_']) || isset($_COOKIE['_ui
                                         $_SESSION['user_nickname'] = $user['user_nickname'];
                                         $_SESSION['user_role'] = $user_role;
                                         $_SESSION['login'] = 'success';
-                                        header("Refresh:2;url=../index.php");
+                                        header("Refresh:2;url=./index.php");
                                     } else {
                                         $error_password = "Wrong password!";
                                     }
@@ -82,10 +77,10 @@ if (isset($_SESSION['login']) || isset($_COOKIE['_uid_']) || isset($_COOKIE['_ui
 
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header justify-content-center">
-                                    <h3 class="font-weight-light my-4">SIGN IN</h3> 
-                                   
+                                    <h3 class="font-weight-light my-4">SIGN IN</h3>
+
                                 </div>
-                                
+
                                 <div class="card-body">
                                     <?php
                                     if (isset($success)) {
@@ -123,7 +118,6 @@ if (isset($_SESSION['login']) || isset($_COOKIE['_uid_']) || isset($_COOKIE['_ui
                                 </div>
                                 <div class="card-footer text-center">
                                     <div class="small">
-                                        <a href="signup.php">Need an account? Sign up!</a> <br>
                                         <a href="forgot-password.php">Forgot password</a><br>
                                         <a href="../index.php">Home</a>
                                     </div>

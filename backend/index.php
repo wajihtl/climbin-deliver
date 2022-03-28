@@ -193,6 +193,19 @@
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="blog.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+                            <div class="card bg-danger text-white mb-4">
+                                <div class="card-body d-flex align-items-center justify-content-between">
+                                    <p><?php echo ($lang == "fr" ?  "team" : "boisson"); ?></p>
+                                    <?php
+                                    $sql = "SELECT * FROM team";
+                                    $stmt = $pdo->prepare($sql);
+                                    $stmt->execute([':status' => 'Published']);
+                                    $post_count = $stmt->rowCount();
+                                    ?>
+                                    <p><?php echo $post_count; ?></p>
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="team.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
