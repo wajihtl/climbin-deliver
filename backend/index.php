@@ -13,8 +13,6 @@
             ?>
         </div>
 
-        
-
         <div id="layoutSidenav_content">
             <main>
                 <div class="page-header pb-10 page-header-dark bg-gradient-primary-to-secondary">
@@ -32,79 +30,225 @@
                 <div class="container-fluid mt-n10">
 
                     <!--Card Primary-->
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card bg-primary text-white mb-4">
-                            <div class="card-body d-flex align-items-center justify-content-between">
-                                <p><?php echo ($lang == "fr" ?  "whyus" : "whyus"); ?></p>
-                                <?php
-                                $sql = "SELECT * FROM whyus";
-                                $stmt = $pdo->prepare($sql);
-                                $stmt->execute();
-                                $comment_count = $stmt->rowCount();
-                                ?>
-                                <p><?php echo $comment_count; ?></p>
+
+                    <?php
+                    if (isset($_COOKIE['_uid_'])) {
+                        $user_id = base64_decode($_COOKIE['_uid_']);
+                    } else if (isset($_SESSION['user_id'])) {
+                        $user_id = $_SESSION['user_id'];
+                    } else {
+                        $user_id = -1;
+                    }
+                    $sql = "SELECT * FROM users WHERE user_id = :id";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute([
+                        ':id' => $user_id
+                    ]);
+                    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $user_id = $user['user_id'];
+                    $user_name = $user['user_name'];
+                    $user_email = $user['user_email'];
+                    $user_photo = $user['user_photo'];
+                    ?>
+
+                    <?php
+                    if ($user_name == 'wajih') {
+
+
+                    ?>
+
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <p> <?php echo ($lang == "fr" ?  "adult" : "adult"); ?></p>
+                                        <?php
+                                        $sql = "SELECT * FROM adult";
+                                        $stmt = $pdo->prepare($sql);
+                                        $stmt->execute([':status' => 'Published']);
+                                        $post_count = $stmt->rowCount();
+                                        ?>
+                                        <p><?php echo $post_count; ?></p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="Adult.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-footer d-flex align-items-center justify-content-between">
-                                <a class="small text-white stretched-link" href="whyus.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
-                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <p><?php echo ($lang == "fr" ?  "whyus" : "whyus"); ?></p>
+                                        <?php
+                                        $sql = "SELECT * FROM whyus";
+                                        $stmt = $pdo->prepare($sql);
+                                        $stmt->execute();
+                                        $comment_count = $stmt->rowCount();
+                                        ?>
+                                        <p><?php echo $comment_count; ?></p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="whyus.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <p><?php echo ($lang == "fr" ?  "classes" : "classes"); ?></p>
+                                        <?php
+                                        $sql = "SELECT * FROM classes";
+                                        $stmt = $pdo->prepare($sql);
+                                        $stmt->execute();
+                                        $comment_count = $stmt->rowCount();
+                                        ?>
+                                        <p><?php echo $comment_count; ?></p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="Classes.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <p><?php echo ($lang == "fr" ?  "club" : "club"); ?></p>
+                                        <?php
+                                        $sql = "SELECT * FROM club ";
+                                        $stmt = $pdo->prepare($sql);
+                                        $stmt->execute();
+                                        $comment_count = $stmt->rowCount();
+                                        ?>
+                                        <p><?php echo $comment_count; ?></p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="Club.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <p><?php echo ($lang == "fr" ?  "event" : "event"); ?></p>
+                                        <?php
+                                        $sql = "SELECT * FROM event ";
+                                        $stmt = $pdo->prepare($sql);
+                                        $stmt->execute();
+                                        $comment_count = $stmt->rowCount();
+                                        ?>
+                                        <p><?php echo $comment_count; ?></p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="Evenement.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-danger text-white mb-4">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <p><?php echo ($lang == "fr" ?  "kid" : "kid"); ?></p>
+                                        <?php
+                                        $sql = "SELECT * FROM kid";
+                                        $stmt = $pdo->prepare($sql);
+                                        $stmt->execute([':status' => 'Published']);
+                                        $post_count = $stmt->rowCount();
+                                        ?>
+                                        <p><?php echo $post_count; ?></p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="Kid.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-danger text-white mb-4">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <p><?php echo ($lang == "fr" ?  "food" : "food"); ?></p>
+                                        <?php
+                                        $sql = "SELECT * FROM food";
+                                        $stmt = $pdo->prepare($sql);
+                                        $stmt->execute([':status' => 'Published']);
+                                        $post_count = $stmt->rowCount();
+                                        ?>
+                                        <p><?php echo $post_count; ?></p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="Food.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-danger text-white mb-4">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <p><?php echo ($lang == "fr" ?  "boisson" : "boisson"); ?></p>
+                                        <?php
+                                        $sql = "SELECT * FROM boisson";
+                                        $stmt = $pdo->prepare($sql);
+                                        $stmt->execute([':status' => 'Published']);
+                                        $post_count = $stmt->rowCount();
+                                        ?>
+                                        <p><?php echo $post_count; ?></p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="boisson.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <p><?php echo ($lang == "fr" ?  "Blog" : "Blog"); ?></p>
+                                        <?php
+                                        $sql = "SELECT * FROM blog";
+                                        $stmt = $pdo->prepare($sql);
+                                        $stmt->execute();
+                                        $comment_count = $stmt->rowCount();
+                                        ?>
+                                        <p><?php echo $comment_count; ?></p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="blog.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-danger text-white mb-4">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <p><?php echo ($lang == "fr" ?  "team" : "boisson"); ?></p>
+                                        <?php
+                                        $sql = "SELECT * FROM team";
+                                        $stmt = $pdo->prepare($sql);
+                                        $stmt->execute([':status' => 'Published']);
+                                        $post_count = $stmt->rowCount();
+                                        ?>
+                                        <p><?php echo $post_count; ?></p>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="team.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body d-flex align-items-center justify-content-between">
-                                    <p> <?php echo ($lang == "fr" ?  "adult" : "adult"); ?></p>
-                                    <?php
-                                    $sql = "SELECT * FROM adult";
-                                    $stmt = $pdo->prepare($sql);
-                                    $stmt->execute([':status' => 'Published']);
-                                    $post_count = $stmt->rowCount();
-                                    ?>
-                                    <p><?php echo $post_count; ?></p>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="Adult.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body d-flex align-items-center justify-content-between">
-                                    <p><?php echo ($lang == "fr" ?  "classes" : "classes"); ?></p>
-                                    <?php
-                                    $sql = "SELECT * FROM classes";
-                                    $stmt = $pdo->prepare($sql);
-                                    $stmt->execute();
-                                    $comment_count = $stmt->rowCount();
-                                    ?>
-                                    <p><?php echo $comment_count; ?></p>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="Classes.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-secondary text-white mb-4">
-                                <div class="card-body d-flex align-items-center justify-content-between">
-                                    <p><?php echo ($lang == "fr" ?  "club" : "club"); ?></p>
-                                    <?php
-                                    $sql = "SELECT * FROM club ";
-                                    $stmt = $pdo->prepare($sql);
-                                    $stmt->execute();
-                                    $comment_count = $stmt->rowCount();
-                                    ?>
-                                    <p><?php echo $comment_count; ?></p>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="Club.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
+
+
+                    <?php
+                    } else {
+                    ?>
+
+
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-secondary text-white mb-4">
                                 <div class="card-body d-flex align-items-center justify-content-between">
@@ -125,61 +269,6 @@
                         </div>
 
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body d-flex align-items-center justify-content-between">
-                                    <p><?php echo ($lang == "fr" ?  "kid" : "kid"); ?></p>
-                                    <?php
-                                    $sql = "SELECT * FROM kid";
-                                    $stmt = $pdo->prepare($sql);
-                                    $stmt->execute([':status' => 'Published']);
-                                    $post_count = $stmt->rowCount();
-                                    ?>
-                                    <p><?php echo $post_count; ?></p>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="Kid.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body d-flex align-items-center justify-content-between">
-                                    <p><?php echo ($lang == "fr" ?  "food" : "food"); ?></p>
-                                    <?php
-                                    $sql = "SELECT * FROM food";
-                                    $stmt = $pdo->prepare($sql);
-                                    $stmt->execute([':status' => 'Published']);
-                                    $post_count = $stmt->rowCount();
-                                    ?>
-                                    <p><?php echo $post_count; ?></p>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="Food.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body d-flex align-items-center justify-content-between">
-                                    <p><?php echo ($lang == "fr" ?  "boisson" : "boisson"); ?></p>
-                                    <?php
-                                    $sql = "SELECT * FROM boisson";
-                                    $stmt = $pdo->prepare($sql);
-                                    $stmt->execute([':status' => 'Published']);
-                                    $post_count = $stmt->rowCount();
-                                    ?>
-                                    <p><?php echo $post_count; ?></p>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="boisson.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary text-white mb-4">
                                 <div class="card-body d-flex align-items-center justify-content-between">
                                     <p><?php echo ($lang == "fr" ?  "Blog" : "Blog"); ?></p>
@@ -193,25 +282,18 @@
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="blog.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body d-flex align-items-center justify-content-between">
-                                    <p><?php echo ($lang == "fr" ?  "team" : "boisson"); ?></p>
-                                    <?php
-                                    $sql = "SELECT * FROM team";
-                                    $stmt = $pdo->prepare($sql);
-                                    $stmt->execute([':status' => 'Published']);
-                                    $post_count = $stmt->rowCount();
-                                    ?>
-                                    <p><?php echo $post_count; ?></p>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="team.php"><?php echo ($lang == "fr" ?  "Voir les détails" : "View Details"); ?></a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+
                                 </div>
                             </div>
                         </div>
 
-                        <!--End Table-->
+
+
+                    <?php
+                    } ?>
+
+
+                    <!--End Table-->
 
             </main>
 

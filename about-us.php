@@ -40,32 +40,28 @@ include './header.php' ?>
                 <div class="cs-item">
                     <span class="flaticon-034-stationary-bike"></span>
                     <h4>Équipement moderne</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        dolore facilisis.</p>
+                    <p></p>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="cs-item">
                     <span class="flaticon-050-no-fast-food"></span>
                     <h4>Restauration</h4>
-                    <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
-                        facilisis.</p>
+                    <p></p>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="cs-item">
                     <span class="flaticon-002-dumbell"></span>
                     <h4>Proffesponal training plan</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        dolore facilisis.</p>
+                    <p></p>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="cs-item">
                     <span class="flaticon-014-heart-beat"></span>
                     <h4>Unique to your needs</h4>
-                    <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
-                        facilisis.</p>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -85,7 +81,7 @@ include './header.php' ?>
                 while ($video = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
                     $id = $video['id'];
-                    $vedio = $video['vedio'];
+                    $vedio = $video['video'];
 
 
                 ?>
@@ -97,12 +93,25 @@ include './header.php' ?>
             <div class="col-lg-6 p-0">
                 <div class="about-text">
                     <div class="section-title">
-                        <span>About Us</span>
-                        <h2>CE QUE NOUS AVONS FAIT</h2>
+                        <?php
+                        $sql = "SELECT * FROM whyus";
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->execute();
+                        while ($whyus = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                            $content = $whyus['Content'];
+                            $title = $whyus['Title'];
+
+
+                        ?>
+                            <span>About Us</span>
+                            <h2><?php echo $title ?></h2>
                     </div>
                     <div class="at-desc">
-                        <p>Premiere salle de pratique de l'activité d'escalade de bloc.</p>
+                        <p><?php echo $content ?></p>
                     </div>
+                <?php } ?>
+
 
                 </div>
             </div>
@@ -173,7 +182,8 @@ include './header.php' ?>
 <!-- Banner Section End -->
 
 <!-- Testimonial Section Begin -->
-<section class="testimonial-section spad">
+<section class="testimonial-section spad" style="background-color: whitesmoke;">
+
     <div class="container">
         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
         <div class="elfsight-app-266a284d-393e-4785-82da-23755009d297"></div>

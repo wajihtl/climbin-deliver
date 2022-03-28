@@ -23,7 +23,7 @@
                                 <div class="page-header-icon"><i data-feather="users"></i></div>
                                 <span>Utilisateurs</span>
                             </h1>
-                            <a href="add-new-club.php" title="Add new user" class="btn btn-white">
+                            <a href="add-new-user.php" title="Add new user" class="btn btn-white">
                                 <div class="page-header-icon"><i data-feather="plus"></i></div>
                             </a>
                         </div>
@@ -122,7 +122,7 @@
                                                     if ($user_id == $u_id) { ?>
                                                         <button title="You can't edit yourself!" class="btn btn-info btn-icon"><i data-feather="edit"></i></button>
                                                     <?php } else { ?>
-                                                        <form action="update-club.php" method="POST">
+                                                        <form action="update-user.php" method="POST">
                                                             <input type="hidden" name="user-id" value="<?php echo $user_id; ?>">
                                                             <button name="edit-user" class="btn btn-info btn-icon"><i data-feather="edit"></i></button>
                                                         </form>

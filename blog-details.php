@@ -59,7 +59,7 @@ include './header.php' ?>
                             $content = $blog['content'];
                         }
                         ?>
-                        <p><?php echo $content; ?>
+                        <p style="overflow-wrap: break-word; word-wrap: break-word;"><?php echo $content; ?>
                         </p>
 
 

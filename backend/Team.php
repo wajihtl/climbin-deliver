@@ -35,17 +35,12 @@
                         <div class="card-body">
                             <div class="datatable table-responsive">
                                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
-                                    <a class="btn btn-primary mr-2 my-1" tabindex="0" aria-controls="datatable-buttons" href="Team.php" onclick="CopyToClipboard('dataTable')"><span>Copier</span></a>
-                                    <a class="btn btn-primary mr-2 my-1 " tabindex="0" aria-controls="datatable-buttons" href="Team.php" onclick="exportTableToExcel('dataTable')"><span>Excel</span></a>
-                                    &emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                     <a><label>Chercher: <input type="text" id="myInput" onkeyup="myFunction()" class="form-control form-control-sm" placeholder="chercher par nom.."></label></a>
                                     <br>
-
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)"><i data-feather="list"></i> name</th>
                                             <th onclick="sortTable(1)"><i data-feather="list"></i> image</th>
-
                                             <th>Éditer</th>
                                             <th>Effacer</th>
                                         </tr>

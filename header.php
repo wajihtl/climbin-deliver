@@ -51,8 +51,8 @@
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="canvas-social">
-            <a href="https://www.facebook.com/ClimbInTunisia"><i class="fa fa-facebook"></i></a>
-            <a href="https://www.instagram.com/climb.in/"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.facebook.com/ClimbInTunisia" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/climb.in/" target="_blank"><i class="fa fa-instagram"></i></a>
         </div>
     </div>
     <!-- Offcanvas Menu Section End -->

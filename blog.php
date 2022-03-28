@@ -53,7 +53,8 @@ include './header.php' ?>
                                     <p><?php echo $auteur; ?></p>
                                 </li>
                             </ul>
-                            <p><?php echo $description; ?></p>
+                            <p style=" overflow-wrap: break-word;
+  word-wrap: break-word; "><?php echo $description; ?></p>
                         </div>
                     </div>
                 </div>
