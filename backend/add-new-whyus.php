@@ -1,36 +1,3 @@
-<script>
-    function ValidateEmail(inputText) {
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if (inputText.value.match(mailformat)) {
-            document.form1.text1.focus();
-            return true;
-        } else {
-            alert("You have entered an invalid email address!");
-            document.form1.text1.focus();
-            return false;
-        }
-    }
-
-    function numb(inputtxt) {
-        var numbers = /^[-+]?[0-9]+$/;
-        if (inputtxt.value.match(numbers)) {
-            return true;
-        } else {
-            alert('Prière de saisir uniquement des nombres');
-            return false;
-        }
-    }
-
-    function lett(inputtxt) {
-        var letters = /^[A-Za-z\s]+$/;
-        if (inputtxt.value.match(letters)) {
-            return true;
-        } else {
-            alert('Prière de saisir uniquement des lettres');
-            return false;
-        }
-    }
-</script>
 <?php require_once('./includes/header.php'); ?>
 
 <body class="nav-fixed">
@@ -95,7 +62,7 @@
 
                                 <div class="form-group">
                                     <label for="Price">adult adresse:</label>
-                                    <input name="Price" class="form-control" id="Price" type="text" placeholder="Price" />
+                                    <input name="Price" class="form-control" id="Price" type="text" placeholder="prix" />
                                 </div>
                                 <div class="form-group">
                                     <label for="type">adult type:</label>

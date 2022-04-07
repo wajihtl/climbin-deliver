@@ -64,7 +64,7 @@
                                             <tr>
 
                                                 <td>
-                                                    <img src="../img/services/<?php echo $image; ?>" width="50" height="50" />
+                                                    <img src="../img/boisson/<?php echo $image; ?>" width="50" height="50" />
                                                 </td>
 
                                                 <td>

@@ -2,7 +2,7 @@
 <section class="footer-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="fs-about">
                     <div class="fa-logo">
                         <a href="#"><img src="img/logo.png" alt=""></a>
@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="col-lg-6 col-md-3 col-sm-6" style="float: inline-end;">
                 <div class="fs-widget">
                     <h4>Useful links</h4>
                     <ul>
@@ -30,9 +30,9 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="copyright-text">
-                    <p>Copyright &copy;<script>
+                    <p> &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved 2021| This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by Jihed Mohamed</a></p>
+                        </script>
                 </div>
             </div>
         </div>

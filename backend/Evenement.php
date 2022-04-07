@@ -74,7 +74,7 @@
                                                     <?php echo $Content; ?>
                                                 </td>
                                                 <td>
-                                                    <img src="./assets/img/<?php echo $Picture; ?>" width="50" height="50" />
+                                                    <img src="../img/evenement/<?php echo $Picture; ?>" width="50" height="50" />
                                                 </td>
 
                                                 <td>

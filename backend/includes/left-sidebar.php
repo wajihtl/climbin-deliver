@@ -71,26 +71,59 @@
                 <a class="nav-link collapsed pt-4 " href="boisson.php">
                     <div class="nav-link-icon"><i data-feather="menu"></i></div>
                     <?php echo ($lang == "fr" ?  "boisson" : "boisson"); ?>
-                    <a class="nav-link collapsed pt-4 " href="Team.php">
-                        <div class="nav-link-icon"><i data-feather="menu"></i></div>
-                        <?php echo ($lang == "fr" ?  "Team" : "team"); ?>
-                    </a>
+                </a>
+                <a class="nav-link collapsed pt-4 " href="Team.php">
+                    <div class="nav-link-icon"><i data-feather="menu"></i></div>
+                    <?php echo ($lang == "fr" ?  "Team" : "team"); ?>
+                </a>
+                <a class="nav-link collapsed pt-4" href="messages.php">
+                    <div class="nav-link-icon"><i data-feather="menu"></i></div>
+                    <?php echo ($lang == "fr" ?  "Messages" : "Messages"); ?>
+                </a>
 
-                <?php
+            <?php
             } else {
-                ?>
-                    <a class="nav-link collapsed pt-4 " href="Evenement.php">
-                        <div class="nav-link-icon"><i data-feather="menu"></i></div>
-                        <?php echo ($lang == "fr" ?  "Evenements" : "Events"); ?>
-                    </a>
-                    <a class="nav-link collapsed pt-4 " href="blog.php">
-                        <div class="nav-link-icon"><i data-feather="menu"></i></div>
-                        <?php echo ($lang == "fr" ?  "blog" : "blog"); ?>
-                    </a>
+            ?>
+                <a class="nav-link collapsed pt-4 " href="Evenement.php">
+                    <div class="nav-link-icon"><i data-feather="menu"></i></div>
+                    <?php echo ($lang == "fr" ?  "Evenements" : "Events"); ?>
+                </a>
+                <a class="nav-link collapsed pt-4 " href="blog.php">
+                    <div class="nav-link-icon"><i data-feather="menu"></i></div>
+                    <?php echo ($lang == "fr" ?  "blog" : "blog"); ?>
+                </a>
 
-                <?php
+            <?php
             } ?>
         </div>
     </div>
+
+    <div class="sidenav-footer">
+        <div class="sidenav-footer-content">
+            <div class="sidenav-footer-subtitle"><?php echo ($lang == "fr" ?  "Connecté en tant que:" : "Logged in as:"); ?></div>
+            <?php
+            if (isset($_COOKIE['_uid_'])) {
+                $user_id = base64_decode($_COOKIE['_uid_']);
+            } else if (isset($_SESSION['user_id'])) {
+                $user_id = $_SESSION['user_id'];
+            } else {
+                $user_id = -1;
+            }
+            $sql = "SELECT * FROM users WHERE user_id = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                ':id' => $user_id
+            ]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $user_name = $user['user_name'];
+            ?>
+            <div class="sidenav-footer-title"><?php echo $user_name; ?></div>
+        </div>
+    </div>
+    <?php
+    require_once("./includes/registration.php");
+    ?>
+
+
 
 </nav>

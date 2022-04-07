@@ -88,7 +88,7 @@
                                                     <?php echo $user_email; ?>
                                                 </td>
                                                 <td>
-                                                    <img src="./assets/img/<?php echo $user_photo; ?>" width="50" height="50" />
+                                                    <img src="../img/users/<?php echo $user_photo; ?>" width="50" height="50" />
                                                 </td>
                                                 <td><?php echo $registered_on; ?></td>
                                                 <td>

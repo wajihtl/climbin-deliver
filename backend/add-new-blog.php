@@ -1,25 +1,4 @@
-<script>
 
-    function numb(inputtxt) {
-        var numbers = /^[-+]?[0-9]+$/;
-        if (inputtxt.value.match(numbers)) {
-            return true;
-        } else {
-            alert('Prière de saisir uniquement des nombres');
-            return false;
-        }
-    }
-
-    function lett(inputtxt) {
-        var letters = /^[A-Za-z\s]+$/;
-        if (inputtxt.value.match(letters)) {
-            return true;
-        } else {
-            alert('Prière de saisir uniquement des lettres');
-            return false;
-        }
-    }
-</script>
 <?php require_once('./includes/header.php'); ?>
 
 <body class="nav-fixed">
@@ -95,7 +74,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="content">Content:</label>
-                                    <input name="content" class="form-control" id="text" type="text" placeholder="content" />
+                                    <input name="content" class="form-control" id="text" type="text" placeholder="contenu" />
                                 </div>
 
 

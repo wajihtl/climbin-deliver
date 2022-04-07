@@ -42,7 +42,7 @@
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)"><i data-feather="list"></i> Type</th>
-                                            <th onclick="sortTable(1)"><i data-feather="list"></i> Price</th>
+                                            <th onclick="sortTable(1)"><i data-feather="list"></i> prix</th>
                                             <th onclick="sortTable(2)"><i data-feather="list"></i> Description</th>
                                             <th>Éditer</th>
                                             <th>Effacer</th>
@@ -63,8 +63,6 @@
 
                                         ?>
                                             <tr>
-
-
                                                 <td>
                                                     <?php echo $type; ?>
                                                 </td>
@@ -97,7 +95,6 @@
                                                         <button name="delete" type="submit" class="btn btn-red btn-icon"><i data-feather="trash-2"></i></button>
                                                     </form>
                                                 </td>
-
                                             </tr>
                                         <?php }
                                         ?>

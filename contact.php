@@ -51,13 +51,30 @@ include './header.php' ?>
                     </div>
                 </div>
             </div>
+            <?php
+            if (isset($_POST['send'])) {
+                $user_name = $_POST['user_name'];
+                $user_email = $_POST['user_email'];
+                $message = trim($_POST['message']);
+                date_default_timezone_set('Africa/Tunis');
+                $sql = "INSERT INTO messages SET ms_username = :username, ms_usermail = :email, ms_detail = :detail, ms_date = :date";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute([
+                    ':username' => $user_name,
+                    ':email' => $user_email,
+                    ':detail' => $message,
+                    ':date' => date("D, M, Y") . ' at ' . date("h:i A")
+                ]);
+                echo "<p class='alert alert-success' style=' position:fixed;top:0;'>votre message a été envoyé avec succès</p>";
+            }
+            ?>
             <div class="col-lg-6">
                 <div class="leave-comment">
-                    <form action="#">
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="Email">
-                        <textarea placeholder="Comment"></textarea>
-                        <button type="submit">Submit</button>
+                    <form action="contact.php" method="POST">
+                        <input name="user_name" type="text" placeholder="Name">
+                        <input name="user_email" type="text" placeholder="Email">
+                        <textarea name="message" placeholder="Comment"></textarea>
+                        <button name="send" type="submit">Submit</button>
                     </form>
                 </div>
             </div>
