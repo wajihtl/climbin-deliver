@@ -49,18 +49,6 @@
                         <div class="card-body">
                             <div class="datatable table-responsive">
 
-                                <div class="dropdown">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                    <button class="btn btn-teal dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Options de téléchargement
-
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="./pdf_genrator/generate_pdf users.php">PDF</a>
-                                        <a class="dropdown-item" onclick="exportTableToExcel('dataTable')" href="#">Excel</a>
-
-                                    </div>
-                                </div>
-                                <br>
 
 
                                 <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">

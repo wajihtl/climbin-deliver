@@ -58,7 +58,7 @@
             <?php
             if (isset($_POST['edit-user'])) {
                 $id = $_POST['id'];
-                $url = "http://localhost/Climbin-main/backend/update-evenement.php?id=" . $id;
+                $url = "update-evenement.php?id=" . $id;
                 header("Location: {$url}");
             }
 

@@ -16,7 +16,7 @@
         <?php
         if (isset($_POST['edit-user'])) {
             $user_id = $_POST['user-id'];
-            $url = "http://localhost/Climbin-main/backend/update-user.php?user_id=" . $user_id;
+            $url = "update-user.php?user_id=" . $user_id;
             header("Location: {$url}");
         }
 

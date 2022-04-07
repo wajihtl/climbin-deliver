@@ -55,7 +55,6 @@
                                 $user_photo_temp = $_FILES['user-photo']['tmp_name'];
                                 move_uploaded_file("{$user_photo}", "./assests/img/{$user_photo_temp}");
 
-
                                 $sql = "INSERT INTO users (user_name, user_nickname, user_email, user_password, user_photo, registered_on, user_role) VALUES (:username, :nickname, :email, :password, :photo, :date, :role)";
                                 $stmt = $pdo->prepare($sql);
                                 $stmt->execute([
@@ -67,6 +66,8 @@
                                     ':date' => date("M n, Y") . ' at ' . date("h:i A"),
                                     ':role' => $user_role
                                 ]);
+                                echo('test');       
+
                                 header("Location: users.php");
                             }
                             

@@ -19,6 +19,7 @@
             $user_name = $user['user_name'];
             $user_email = $user['user_email'];
             $user_photo = $user['user_photo'];
+            $user_role = $user['user_role'];
             ?>
 
             <a class="nav-link collapsed pt-4 " href="index.php">
@@ -28,7 +29,7 @@
 
 
             <?php
-            if ($user_name == 'wajih') {
+            if ($user_role == 'admin') {
             ?>
                 <a class="nav-link collapsed pt-4 " href="users.php">
                     <div class="nav-link-icon"><i data-feather="menu"></i></div>

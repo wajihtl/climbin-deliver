@@ -16,7 +16,7 @@
 </head>
 <?php $lang = "fr"; ?>
 <?php
-if (isset($_SESSION['login']) && $_SESSION['user_role'] == 'admin') {
+if (isset($_SESSION['login'])) {
     // it s ok 
 } else {
     // header("Location: ../index.php");

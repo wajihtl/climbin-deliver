@@ -68,7 +68,7 @@
                 <?php
                 if (isset($_POST['edit-user'])) {
                     $id_categ = $_POST['id_categ'];
-                    $url = "http://localhost/FoodHaus/backend/update-categorie.php?id_categ=" . $id_categ;
+                    $url = "update-categorie.php?id_categ=" . $id_categ;
                     header("Location: {$url}");
                 }
 
